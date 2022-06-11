@@ -1,5 +1,5 @@
 import streamlit as st
-from datetime import date
+#from datetime import date
 
 import yfinance as yf
 import pandas as pd
@@ -21,7 +21,6 @@ ticker_lst=pd.read_csv('https://raw.githubusercontent.com/dataprofessor/s-and-p-
 tickerSymbol = st.sidebar.selectbox('Stock ticker', ticker_lst) # Select ticker symbol
 tickerData = yf.Ticker(tickerSymbol) # Get ticker data
 tickerDf = tickerData.history(period='1d', start=start_date, end=end_date)
-print(type(tickerDf))
 
 # Graph of Closing Price
 st.header('Stock Price')
